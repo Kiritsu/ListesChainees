@@ -13,13 +13,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f7016a28-7cb9-41a7-8470-51ac0e028081" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ListesChainees.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ListesChainees.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ListesChainees.dir/liste.cc.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ListesChainees.dir/liste.cc.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ListesChainees.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/ListesChainees.dir/main.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/ListesChainees" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/ListesChainees" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/liste.cc" beforeDir="false" afterPath="$PROJECT_DIR$/liste.cc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/liste.h" beforeDir="false" afterPath="$PROJECT_DIR$/liste.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +61,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571649012613</updated>
-      <workItem from="1571649013724" duration="2246000" />
+      <workItem from="1571649013724" duration="2411000" />
     </task>
     <servers />
   </component>
@@ -74,21 +69,21 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1874" height="268" key="GridCell.Tab.0.bottom" timestamp="1571651263133">
+    <state width="1874" height="268" key="GridCell.Tab.0.bottom" timestamp="1571651443989">
       <screen x="0" y="27" width="1920" height="1020" />
     </state>
-    <state width="1874" height="268" key="GridCell.Tab.0.bottom/0.27.1920.1020@0.27.1920.1020" timestamp="1571651263133" />
-    <state width="1874" height="268" key="GridCell.Tab.0.center" timestamp="1571651263133">
+    <state width="1874" height="268" key="GridCell.Tab.0.bottom/0.27.1920.1020@0.27.1920.1020" timestamp="1571651443989" />
+    <state width="1874" height="268" key="GridCell.Tab.0.center" timestamp="1571651443989">
       <screen x="0" y="27" width="1920" height="1020" />
     </state>
-    <state width="1874" height="268" key="GridCell.Tab.0.center/0.27.1920.1020@0.27.1920.1020" timestamp="1571651263133" />
-    <state width="1874" height="268" key="GridCell.Tab.0.left" timestamp="1571651263132">
+    <state width="1874" height="268" key="GridCell.Tab.0.center/0.27.1920.1020@0.27.1920.1020" timestamp="1571651443989" />
+    <state width="1874" height="268" key="GridCell.Tab.0.left" timestamp="1571651443989">
       <screen x="0" y="27" width="1920" height="1020" />
     </state>
-    <state width="1874" height="268" key="GridCell.Tab.0.left/0.27.1920.1020@0.27.1920.1020" timestamp="1571651263132" />
-    <state width="1874" height="268" key="GridCell.Tab.0.right" timestamp="1571651263133">
+    <state width="1874" height="268" key="GridCell.Tab.0.left/0.27.1920.1020@0.27.1920.1020" timestamp="1571651443989" />
+    <state width="1874" height="268" key="GridCell.Tab.0.right" timestamp="1571651443989">
       <screen x="0" y="27" width="1920" height="1020" />
     </state>
-    <state width="1874" height="268" key="GridCell.Tab.0.right/0.27.1920.1020@0.27.1920.1020" timestamp="1571651263133" />
+    <state width="1874" height="268" key="GridCell.Tab.0.right/0.27.1920.1020@0.27.1920.1020" timestamp="1571651443989" />
   </component>
 </project>

@@ -143,3 +143,21 @@ void Liste::supprimer(Iterateur &pos) {
         pos.position->precedent->suivant = pos.position->suivant;
     }
 }
+
+Liste::Liste(const Liste &liste) {
+    Iterateur iterateur = liste.debut();
+    while (iterateur.position != nullptr)
+    {
+        this->ajouter(*iterateur);
+        iterateur++;
+    }
+}
+
+Liste::~Liste() {
+    Iterateur iterateur = this->debut();
+    while (iterateur.position != nullptr)
+    {
+        delete iterateur.position;
+        iterateur++;
+    }
+}

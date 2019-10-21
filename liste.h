@@ -12,6 +12,10 @@ public:
    // constructeur
    Liste();
 
+   Liste(const Liste& liste);
+
+   ~Liste();
+
    // ajouter s a la fin de la liste
    void ajouter(const std::string& s);
 
