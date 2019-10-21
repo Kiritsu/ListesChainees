@@ -39,17 +39,16 @@ public:
    // constructeur
    Iterateur();
 
-   // retourne la valeur dans cette position
-   std::string& get() const;
+   std::string& operator*() const;
 
-   // avance a la position suivante
-   void suivant();
+   Iterateur& operator++();
+   Iterateur operator++(int);
 
-   // recule a la position precedente
-   void precedent();
+   Iterateur& operator--();
+   Iterateur operator--(int);
 
-   // compare deux iterateurs
-   bool egal(const Iterateur& b) const;
+   bool operator==(const Iterateur& b) const;
+   bool operator!=(const Iterateur& b) const;
 
 private:
    // pointeur vers l'element courant
@@ -58,7 +57,7 @@ private:
    // pointeur vers le dernier element de la liste
    Element* dernier;
 
-friend class Liste;
+   friend class Liste;
 };
 
 #endif

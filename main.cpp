@@ -11,12 +11,12 @@ int main() {
     pos = liste.debut();
 
     liste.inserer(pos, "test");
-    pos.suivant();
+    pos++;
     liste.inserer(pos, "test2");
     liste.supprimer(pos);
 
-    for (pos = liste.debut(); !(pos.egal(liste.fin())); pos.suivant())
+    for (pos = liste.debut(); pos != liste.fin(); pos++)
     {
-        std::cout << pos.get() << std::endl;
+        std::cout << *pos << std::endl;
     }
 }

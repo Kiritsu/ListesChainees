@@ -29,27 +29,45 @@ Iterateur::Iterateur() {
    position = dernier = NULL;
 }
 
-
-string& Iterateur::get() const {
-   return position->valeur;
+Iterateur &Iterateur::operator++() {
+    position = position->suivant;
+    return *this;
 }
 
+Iterateur Iterateur::operator++(int) {
+    Iterateur temp = *this;
 
-void Iterateur::suivant() {
-   position = position->suivant;
+    this->operator++();
+
+    return temp;
 }
 
-
-void Iterateur::precedent() {
-   if (position == NULL) // fin de la liste
-      position = dernier;
-   else
-      position = position->precedent;
+Iterateur &Iterateur::operator--() {
+    if (position == NULL) // fin de la liste
+        position = dernier;
+    else
+        position = position->precedent;
+    return *this;
 }
 
+Iterateur Iterateur::operator--(int) {
+    Iterateur temp = *this;
 
-bool Iterateur::egal(const Iterateur& b) const {
-   return position == b.position;
+    this->operator--();
+
+    return temp;
+}
+
+bool Iterateur::operator==(const Iterateur &b) const {
+    return position == b.position;
+}
+
+bool Iterateur::operator!=(const Iterateur &b) const {
+    return !(*this == b);
+}
+
+std::string &Iterateur::operator*() const {
+    return position->valeur;
 }
 
 
