@@ -4,64 +4,64 @@
 
 #include <string>
 
-class Element;
-class Iterateur;
+template <typename T> class Element;
+template <typename T> class Iterateur;
 
-class Liste {
+template <typename T> class Liste {
 public:
    // constructeur
-   Liste();
+   Liste<T>();
 
-   Liste(const Liste& liste);
+   Liste<T>(const Liste<T>& liste);
 
-   ~Liste();
+   ~Liste<T>();
 
    // ajouter s a la fin de la liste
-   void ajouter(const std::string& s);
+   void ajouter(const T& s);
 
    // ajouter s avant la position pos
-   void inserer(Iterateur& pos, const std::string& s);
+   void inserer(Iterateur<T>& pos, const T& s);
 
    // supprimer l'element a la position pos
-   void supprimer(Iterateur& pos);
+   void supprimer(Iterateur<T>& pos);
 
    // la premiere position
-   Iterateur debut() const;
+   Iterateur<T> debut() const;
 
    // la fin de la liste (apres la derniere position)
-   Iterateur fin() const;
+   Iterateur<T> fin() const;
 
 private:
    // pointeurs vers le premier et le dernier element
-   Element* premier;
-   Element* dernier;
+   Element<T>* premier;
+   Element<T>* dernier;
 };
 
 
-class Iterateur {
+template <typename T> class Iterateur {
 public:
    // constructeur
-   Iterateur();
+   Iterateur<T>();
 
-   std::string& operator*() const;
+   T& operator*() const;
 
-   Iterateur& operator++();
-   Iterateur operator++(int);
+   Iterateur<T>& operator++();
+   Iterateur<T> operator++(int);
 
-   Iterateur& operator--();
-   Iterateur operator--(int);
+   Iterateur<T>& operator--();
+   Iterateur<T> operator--(int);
 
-   bool operator==(const Iterateur& b) const;
-   bool operator!=(const Iterateur& b) const;
+   bool operator==(const Iterateur<T>& b) const;
+   bool operator!=(const Iterateur<T>& b) const;
 
 private:
    // pointeur vers l'element courant
-   Element* position;
+   Element<T>* position;
 
    // pointeur vers le dernier element de la liste
-   Element* dernier;
+   Element<T>* dernier;
 
-   friend class Liste;
+   friend class Liste<T>;
 };
 
 #endif

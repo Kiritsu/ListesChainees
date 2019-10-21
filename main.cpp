@@ -2,12 +2,12 @@
 #include "liste.h"
 
 int main() {
-    Liste liste;
+    Liste<std::string> liste;
 
     liste.ajouter("abc");
     liste.ajouter("xyz");
 
-    Iterateur pos;
+    Iterateur<std::string> pos;
     pos = liste.debut();
 
     liste.inserer(pos, "test");

@@ -2,39 +2,39 @@
 
 using namespace std;
 
-class Element {
+template <typename T> class Element {
 public:
    // constructeur
-   Element(const string& s);
+   Element<T>(const string& s);
 
 private:
-   string valeur;
+   T valeur;
 
    // pointeurs vers les voisins
-   Element* precedent;
-   Element* suivant;
+   Element<T>* precedent;
+   Element<T>* suivant;
 
-friend class Liste;
-friend class Iterateur;
+friend class Liste<T>;
+friend class Iterateur<T>;
 };
 
 
-Element::Element(const string& s) {
+template <typename T> Element<T>::Element(const string& s) {
    valeur = s;
    precedent = suivant = NULL;
 }
 
 
-Iterateur::Iterateur() {
+template <typename T> Iterateur<T>::Iterateur() {
    position = dernier = NULL;
 }
 
-Iterateur &Iterateur::operator++() {
+template <typename T> Iterateur<T> &Iterateur<T>::operator++() {
     position = position->suivant;
     return *this;
 }
 
-Iterateur Iterateur::operator++(int) {
+template <typename T> Iterateur<T> Iterateur<T>::operator++(int) {
     Iterateur temp = *this;
 
     this->operator++();
@@ -42,7 +42,7 @@ Iterateur Iterateur::operator++(int) {
     return temp;
 }
 
-Iterateur &Iterateur::operator--() {
+template <typename T> Iterateur<T> &Iterateur<T>::operator--() {
     if (position == NULL) // fin de la liste
         position = dernier;
     else
@@ -50,7 +50,7 @@ Iterateur &Iterateur::operator--() {
     return *this;
 }
 
-Iterateur Iterateur::operator--(int) {
+template <typename T> Iterateur<T> Iterateur<T>::operator--(int) {
     Iterateur temp = *this;
 
     this->operator--();
@@ -58,41 +58,41 @@ Iterateur Iterateur::operator--(int) {
     return temp;
 }
 
-bool Iterateur::operator==(const Iterateur &b) const {
+template <typename T> bool Iterateur<T>::operator==(const Iterateur<T> &b) const {
     return position == b.position;
 }
 
-bool Iterateur::operator!=(const Iterateur &b) const {
+template <typename T> bool Iterateur<T>::operator!=(const Iterateur<T> &b) const {
     return !(*this == b);
 }
 
-std::string &Iterateur::operator*() const {
+template <typename T> T &Iterateur<T>::operator*() const {
     return position->valeur;
 }
 
 
-Liste::Liste() {
+template <typename T> Liste<T>::Liste() {
    premier = dernier = NULL;
 }
 
 
-Iterateur Liste::debut() const {
-   Iterateur it;
+template <typename T> Iterateur<T> Liste<T>::debut() const {
+   Iterateur<T> it;
    it.position = premier;
    it.dernier = dernier;
    return it;
 }
 
 
-Iterateur Liste::fin() const {
-   Iterateur it;
+template <typename T> Iterateur<T> Liste<T>::fin() const {
+   Iterateur<T> it;
    it.position = NULL;
    it.dernier = dernier;
    return it;
 }
 
-void Liste::ajouter(const std::string &s) {
-    Element* element = new Element(s);
+template <typename T> void Liste<T>::ajouter(const T &s) {
+    Element<T>* element = new Element<T>(s);
 
     if (this->dernier == nullptr)
     {
@@ -107,8 +107,8 @@ void Liste::ajouter(const std::string &s) {
     }
 }
 
-void Liste::inserer(Iterateur &pos, const std::string &s) {
-    Element* element = new Element(s);
+template <typename T> void Liste<T>::inserer(Iterateur<T> &pos, const T &s) {
+    Element<T>* element = new Element<T>(s);
 
     if (pos.position->precedent == nullptr)
     {
@@ -126,7 +126,7 @@ void Liste::inserer(Iterateur &pos, const std::string &s) {
     }
 }
 
-void Liste::supprimer(Iterateur &pos) {
+template <typename T> void Liste<T>::supprimer(Iterateur<T> &pos) {
     if (pos.position->suivant == nullptr)
     {
         this->dernier = pos.position->precedent;
@@ -144,7 +144,7 @@ void Liste::supprimer(Iterateur &pos) {
     }
 }
 
-Liste::Liste(const Liste &liste) {
+template <typename T> Liste<T>::Liste(const Liste<T> &liste) {
     Iterateur iterateur = liste.debut();
     while (iterateur.position != nullptr)
     {
@@ -153,7 +153,7 @@ Liste::Liste(const Liste &liste) {
     }
 }
 
-Liste::~Liste() {
+template <typename T> Liste<T>::~Liste() {
     Iterateur iterateur = this->debut();
     while (iterateur.position != nullptr)
     {
