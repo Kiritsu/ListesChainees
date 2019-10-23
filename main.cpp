@@ -1,5 +1,6 @@
 #include <iostream>
 #include "liste.h"
+#include "liste.cc"
 
 int main() {
     Liste<std::string> liste;

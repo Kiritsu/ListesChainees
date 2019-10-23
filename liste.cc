@@ -51,7 +51,7 @@ template <typename T> Iterateur<T> &Iterateur<T>::operator--() {
 }
 
 template <typename T> Iterateur<T> Iterateur<T>::operator--(int) {
-    Iterateur temp = *this;
+    Iterateur<T> temp = *this;
 
     this->operator--();
 
@@ -145,7 +145,7 @@ template <typename T> void Liste<T>::supprimer(Iterateur<T> &pos) {
 }
 
 template <typename T> Liste<T>::Liste(const Liste<T> &liste) {
-    Iterateur iterateur = liste.debut();
+    Iterateur<T> iterateur = liste.debut();
     while (iterateur.position != nullptr)
     {
         this->ajouter(*iterateur);
@@ -154,7 +154,7 @@ template <typename T> Liste<T>::Liste(const Liste<T> &liste) {
 }
 
 template <typename T> Liste<T>::~Liste() {
-    Iterateur iterateur = this->debut();
+    Iterateur<T> iterateur = this->debut();
     while (iterateur.position != nullptr)
     {
         delete iterateur.position;
