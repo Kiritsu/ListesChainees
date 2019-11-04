@@ -5,7 +5,7 @@ using namespace std;
 template <typename T> class Element {
 public:
    // constructeur
-   Element<T>(const string& s);
+   Element<T>(const T& s);
 
 private:
    T valeur;
@@ -19,7 +19,7 @@ friend class Iterateur<T>;
 };
 
 
-template <typename T> Element<T>::Element(const string& s) {
+template <typename T> Element<T>::Element(const T& s) {
    valeur = s;
    precedent = suivant = NULL;
 }
